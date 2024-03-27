@@ -1,0 +1,51 @@
+{
+  "components": [
+    {
+      "text": "# Form Template",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1434i37",
+        "columns": null
+      },
+      "id": "Field_0iviqd2"
+    },
+    {
+      "values": [
+        {
+          "label": "accepted",
+          "value": "accepted"
+        },
+        {
+          "label": "fully accepted",
+          "value": "fully_accepted"
+        },
+        {
+          "label": "canceled",
+          "value": "canceled"
+        },
+        {
+          "label": "to be restarted",
+          "value": "to_be_restarted"
+        }
+      ],
+      "label": "Radio group",
+      "type": "radio",
+      "layout": {
+        "row": "Row_1w6jnfu",
+        "columns": null
+      },
+      "id": "Field_0y92l2j",
+      "key": "outcome"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0v1m6kz",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "schemaVersion": 15
+}

@@ -1,0 +1,2894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="4cd09b3" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0" camunda:diagramRelationId="abb4182f-7be6-4677-8c05-7cbdd5aa14f7">
+  <bpmn:process id="Process_1puspcw" name="BPMN Self-Review" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="UserTaskForm_3o2o85a">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "intro_and_readability",
+  "components": [
+    {
+      "components": [
+        {
+          "text": "# BPMN Self-Review\nYour friendly and interactive self-service",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0a5xxxw",
+            "columns": 14
+          },
+          "id": "Field_05cvskr"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0a5xxxw",
+            "columns": 2
+          },
+          "id": "Field_1m05asi",
+          "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgEAAAIBCAYAAADQ5mxhAAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nO3d/XEUSZrA4a6L/Z85C+AsgLUArQWjswCwYLQWLFiwjAUICwYsGGHBSBYssuBGFtRFMW8zjUZCLXVWVWa+zxOh2N2IO9Tqr/pVVlbmMI7jBgDI57+85gCQkwgAgKREAAAkJQIAICkRAABJiQAASEoEAEBSIgAAkhIBAJCUCACApEQAACQlAgAgKREAAEmJAABISgQAQFIiAACSEgEAkJQIAICkRAAAJCUCACApEQAASYkAAEhKBABAUiIAAJISAQCQlAgAgKREAAAkJQIAICkRAABJiQAASEoEAEBSIgAAkhIBAJCUCACApEQAACQlAgAgKREAAEmJAABISgQAQFIiAACSEgEAkJQIAICkRAAAJCUCACApEQAASYkAAEhKBABAUiIAAJISAQCQlAgAgKREAAAkJQIAICkRAABJiQAASEoEAEBSIgAAkhIBAJCUCACApEQAACQlAgAgKREAAEmJAABISgQAQFIiAACSEgEAkJQIAICkRAAAJCUCACApEQAASYkAAEhKBABAUiIAAJISAQCQlAgAgKREAAAkJQIAICkRAABJiQAASOpvXnhYxjAMbzebzTNP915Ox3E8beBxQtNEACxnCoDnnu+9nDXwGKF5LgcAQFIiAACSEgEAkJQIAICkRAAAJCUCACApEQDL+ey5BmoiAmA5IgCoiggAgKREAAAkJQIAICkRAABJiQAASEoEAEBSIgAAkhIBAJCUCACApEQAACQlAgAgKREAAEmJAABISgQAQFIiAACSEgGsYhiGI888fGsYhieeEpYkAljcMAwvN5vNr8MwnHr24Q/xeTgfhuGZp4SliAAWFQHwLn7nCyEAXwPgxWazebTZbM6EAEsRASwmvujeXft9QoDUdgJgSwiwGBHAIm74otslBEjpO58LIcAiRACzuyMAtoQAqezxuRACzE4EMKs9A2BLCJDCPT4XQoBZiQBmc88A2BICdO0BnwshwGxEALN4YABsCQG6dMDnQggwCxFAcQcGwJYQoCsFPhdTCHwYhuEH7wxKEQEUVSgAtoQAXSj4uXgcIwJCgCJEAMUUDoAtIUDTZvhcPBUClCICKGKmANgSAjRpxs+FEKAIEcDBZg6ALSGQ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"
+        }
+      ],
+      "showOutline": false,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_1w75blb",
+        "columns": null
+      },
+      "id": "Field_0irwkev"
+    },
+    {
+      "text": "This process will help you boost the quality of your BPMN models by improving **readability**, **maintainability**, and **performance**.\nHere is an example for a BPMN model that violates various modeling best practices. We will use this example as a guide through the various steps of the self-review.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_07gbi01",
+        "columns": null
+      },
+      "id": "Field_0wq81y3"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_1awa9fw",
+        "columns": null
+      },
+      "id": "Field_1b4ccnq",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_no_fix.png?raw=true",
+      "alt": "This image shows a negative example with various violations of modeling best practices."
+    },
+    {
+      "text": "## Readability\nWe will start with improving the readability of your BPMN models. This will make subsequent steps easier!\nPlease compare your BPMN models to the examples shown below. If all of your BPMN models fulfill a statement, please check the respective checkbox. \nFor each unchecked checkbox, a new user task is created to discuss the problem in more detail!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0laxzo4",
+        "columns": null
+      },
+      "id": "Field_0gxtmek"
+    },
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "label": "For all tasks and events, sequence flows enter from the left and exit to the right",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_0hl39ic",
+                "columns": null
+              },
+              "id": "Field_0i0fjn7",
+              "key": "tasks_events_sequence_flows"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_065bekm",
+                "columns": null
+              },
+              "id": "Field_1lhhdcd",
+              "properties": { },
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/tasks_events_sequence_flows.png?raw=true",
+              "alt": "The image shows a negative and positive example of sequence flows not entering and exiting tasks and events appropriately."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_04mgy2n",
+            "columns": null
+          },
+          "id": "Field_11kugkn"
+        },
+        {
+          "components": [
+            {
+              "label": "For all gateways, sequence flows enter from the left and exit to the right and bottom in a clean pattern",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_12hgszx",
+                "columns": null
+              },
+              "id": "Field_0ffcmcu",
+              "key": "gateways_sequence_flows"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_14i8sdd",
+                "columns": null
+              },
+              "id": "Field_1cqi1ew",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateways_sequence_flows.png?raw=true",
+              "alt": "The images shows a negative and positive example of how a clean pattern for gateways looks like."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_0zk011g",
+            "columns": null
+          },
+          "id": "Field_1m2jogs"
+        },
+        {
+          "components": [
+            {
+              "label": "Merging exclusive gateways are used to merge sequence flows in front of tasks and events",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_0ux79b2",
+                "columns": null
+              },
+              "id": "Field_1vylpou",
+              "key": "merging_gateways"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_13fnqrn",
+                "columns": null
+              },
+              "id": "Field_039yffn",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/merging_gateways.png?raw=true",
+              "alt": "The images shows a negative and positive example of using exlusive merging gateways."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_0gqzhot",
+            "columns": null
+          },
+          "id": "Field_049ovn6"
+        },
+        {
+          "components": [
+            {
+              "label": "If applicable, elements are aligned on horizontal axes",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_0t6n5vg",
+                "columns": null
+              },
+              "id": "Field_00q9odk",
+              "key": "elements_alignment"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_1xl2hmz",
+                "columns": null
+              },
+              "id": "Field_1q5h7pi",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/elements_alignment.png?raw=true",
+              "alt": "The image shows a negative and positive example of properly aligning BPMN elements."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_0quejg9",
+            "columns": null
+          },
+          "id": "Field_0g60cc7"
+        },
+        {
+          "components": [
+            {
+              "label": "Event labels are placed below the events",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_0cle6ib",
+                "columns": null
+              },
+              "id": "Field_1boovqe",
+              "key": "event_labels"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_1exjn5t",
+                "columns": null
+              },
+              "id": "Field_1rusxa3",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/event_labels.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to best position event labels"
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_1sft9dz",
+            "columns": null
+          },
+          "id": "Field_0b2xdap"
+        },
+        {
+          "components": [
+            {
+              "label": "Gateway labels are placed above the gateways and sequence flow labels along a horizontal segment",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_1vw1f44",
+                "columns": null
+              },
+              "id": "Field_185ip73",
+              "key": "gateway_labels"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_1vbg1ig",
+                "columns": null
+              },
+              "id": "Field_0rzj2p1",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateway_labels.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to best position gateway and sequence flow labels."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_1m1hqo4",
+            "columns": null
+          },
+          "id": "Field_1t1a676"
+        },
+        {
+          "components": [
+            {
+              "label": "There is a continuous happy path from start to end event in each scope of the BPMN model",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_0rn2txk",
+                "columns": null
+              },
+              "id": "Field_1sqpji7",
+              "key": "happy_path"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_0n42o3j",
+                "columns": null
+              },
+              "id": "Field_1gj603p",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/happy_path.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to model a consistent happy path from start to finish.."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_0uxjzoy",
+            "columns": null
+          },
+          "id": "Field_1bmtbzm"
+        },
+        {
+          "components": [
+            {
+              "label": "For tasks, boundary events are attached to the bottom",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_12skkk3",
+                "columns": null
+              },
+              "id": "Field_02i74ma",
+              "key": "tasks_boundary_events"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_10xtqdj",
+                "columns": null
+              },
+              "id": "Field_1v19lov",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/tasks_boundary_events.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to best attach boundary events on tasks"
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_02w7vl7",
+            "columns": null
+          },
+          "id": "Field_1nl4oi9"
+        },
+        {
+          "components": [
+            {
+              "label": "For subprocesses, boundary events are attached to bottom or to the sides below the incoming and outgoing sequence flows",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_19quhnk",
+                "columns": null
+              },
+              "id": "Field_0o021gf",
+              "key": "subprocesses_boundary_events"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_0c8o4gy",
+                "columns": null
+              },
+              "id": "Field_19cld05",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/subprocesses_boundary_events.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to best attach boundary events to subprocesses."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_0e7gxxu",
+            "columns": null
+          },
+          "id": "Field_0ruokw9"
+        },
+        {
+          "components": [
+            {
+              "label": "All sequence flows are of reasonable length and their start and end waypoints can be seen without zooming out",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_0bwu3vt",
+                "columns": null
+              },
+              "id": "Field_1msj2vz",
+              "key": "sequence_flows_length"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_0xvlsdk",
+                "columns": null
+              },
+              "id": "Field_0wdkb82",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/sequence_flows_length.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to avoid overly long sequence flows."
+            },
+            {
+              "text": "There are various reasons for overly sequence flows and there are many different solutions for this problem. Please leave the checkbox unchecked if you want to learn more about this topic in general.",
+              "label": "Text view",
+              "type": "text",
+              "layout": {
+                "row": "Row_02pqtqs",
+                "columns": null
+              },
+              "id": "Field_0ci2eco"
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_0hs1y44",
+            "columns": null
+          },
+          "id": "Field_0a34v4e"
+        },
+        {
+          "components": [
+            {
+              "label": "Gateways follow a block pattern, if possible",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_1lke6x0",
+                "columns": null
+              },
+              "id": "Field_08i1evh",
+              "key": "gateways_block_pattern"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_07rafts",
+                "columns": null
+              },
+              "id": "Field_0cfc95c",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateways_block_pattern.png?raw=true",
+              "alt": "The image shows a negative and positive example of using a block pattern for gateways."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_16p79d0",
+            "columns": null
+          },
+          "id": "Field_1s5a8gt"
+        },
+        {
+          "components": [
+            {
+              "label": "All BPMN elements are placed in equal distance to each other",
+              "type": "checkbox",
+              "layout": {
+                "row": "Row_02r5sru",
+                "columns": null
+              },
+              "id": "Field_19ztpv8",
+              "key": "elements_placement"
+            },
+            {
+              "label": "Image view",
+              "type": "image",
+              "layout": {
+                "row": "Row_0xuw9w3",
+                "columns": null
+              },
+              "id": "Field_1xnc86g",
+              "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/elements_placement.png?raw=true",
+              "alt": "The image shows a negative and positive example of how to best place BPMN elements in relation to each other."
+            }
+          ],
+          "showOutline": true,
+          "label": "",
+          "type": "group",
+          "layout": {
+            "row": "Row_19fj8r2",
+            "columns": null
+          },
+          "id": "Field_1fsb77f"
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_02z29qo",
+        "columns": null
+      },
+      "id": "Field_01w2ii7",
+      "path": "readability"
+    },
+    {
+      "text": "={\n  totalNumberOfBoxes: count(get entries(readability)),\n  uncheckedBoxes: count(get entries(readability)[not(item.value)]),\n  text: if uncheckedBoxes = 0 then \"Congratulations! Your BPMN model has no major readability problems! Let's directly proceed with the next step!\" else \"You have \" + string(uncheckedBoxes) + \" unchecked checkboxes! Let's go through the problems one-by-one. See you in the next form!\"\n}.text",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1johgwx",
+        "columns": null
+      },
+      "id": "Field_0etmto6"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_0eqcti0">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "tasks_events_sequence_flows",
+  "components": [
+    {
+      "text": "# Fixing Sequence Flows related to Tasks and Events\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: For all tasks and events, sequence flows enter from the left and exit to the right",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/tasks_events_sequence_flows.png?raw=true",
+          "alt": "The image shows a negative and positive example of sequence flows not entering and exiting tasks and events appropriately."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nBPMN is modeled from left to right. Additionally, at gateways and boundary events, modeling from top to bottom is used. There are a few exceptions to this rule. As a first step, let's compare the initial bad example with a version with minor corrections.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0fiu3lt",
+            "columns": 7
+          },
+          "id": "Field_0k69w7m",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_no_fix.png?raw=true",
+          "alt": "This image shows a negative example with various violations of modeling best practices."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0fiu3lt",
+            "columns": 8
+          },
+          "id": "Field_0niy60d",
+          "alt": "The image shows the negative example with a few minor corrections.",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_1.png?raw=true"
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_1ldzb9n",
+        "columns": null
+      },
+      "id": "Field_1tuqq7o"
+    },
+    {
+      "text": "While many parts of the model are still chaotic, we can recognize the improvements in the readability, our eyes can more easily follow the natural process flow from left to right.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1p4vkdm",
+        "columns": null
+      },
+      "id": "Field_15tq48k"
+    },
+    {
+      "text": "## Notable Exceptions\nBy their nature, boundary events often attach to the bottom of tasks or subprocesses. Thus, their outgoing sequence flows exit to the bottom. Similarly, to model large-scale retry mechanisms, a boundary event might also be attached to the left side of a subprocess, with the outgoing sequence flow exiting to the right.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1sr0j77",
+        "columns": null
+      },
+      "id": "Field_1xj56sc"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_0dmz2qj",
+        "columns": null
+      },
+      "id": "Field_0w8s2ce",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/tasks_events_sequence_flows_exceptions.png?raw=true",
+      "alt": "This image shows a few exceptions to the rule."
+    },
+    {
+      "text": "Please proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0vm3vks",
+        "columns": null
+      },
+      "id": "Field_0il7ijc"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2lf94l9">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "gateways_sequence_flows",
+  "components": [
+    {
+      "text": "# Fixing Sequence Flows related to Gateways\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: For all gateways, sequence flows enter from the left and exit to the right and bottom in a clean pattern",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateways_sequence_flows.png?raw=true",
+          "alt": "The images shows a negative and positive example of how a clean pattern for gateways looks like."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nOutgoing sequence flows from gateways are the main cause of chaotic BPMN models. In most cases, it is possible to use a clean pattern to model a gateway and the related elements. Give your BPMN models more space and allow the outgoing sequence flows to follow a clean pattern.\nLet's compare our slightly fixed bad example with a new version with additional corrections.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_03jhtwb",
+            "columns": null
+          },
+          "id": "Field_1po931i",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_1.png?raw=true",
+          "alt": "The image shows the negative example with a few minor corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_03jhtwb",
+            "columns": null
+          },
+          "id": "Field_0q6n3ok",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_2.png?raw=true",
+          "alt": "This image show the slightly fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_180nidr",
+        "columns": null
+      },
+      "id": "Field_1etbt5c"
+    },
+    {
+      "text": "Many aspects of the readability around gateways has been improved.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1xkf3wf",
+        "columns": null
+      },
+      "id": "Field_1q2haoj"
+    },
+    {
+      "text": "# Notable Exceptions\nThe placement of outgoing sequence flows from gateways carries meaning. For exclusive, inclusive, and event-based gateways, the sequence flow exiting horizontally to the right should be the happy path. For parallel gateways, this idea cannot be applied fully. In the case of parallel gateways, it is up to personal taste.\nIn extreme examples, to avoid sequence flows crossing each other, or to avoid chunky design, an exclusive, inclusive, or event-based gateway might be exited vertically to the top.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_02soqgc",
+        "columns": null
+      },
+      "id": "Field_0e94st9"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_1o9ney4",
+        "columns": null
+      },
+      "id": "Field_1lo0q1j",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateways_sequence_flows_notable_exceptions.png?raw=true",
+      "alt": "This image shows some notable exceptions to the rule."
+    },
+    {
+      "text": "Please proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_04zzoam",
+        "columns": null
+      },
+      "id": "Field_0ujz4br"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2cnopn5">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "merging_gateways",
+  "components": [
+    {
+      "text": "# Fixing Readability related to Merging Gateways\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: Merging exclusive gateways are used to merge sequence flows in front of tasks and events",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/merging_gateways.png?raw=true",
+          "alt": "The images shows a negative and positive example of using exlusive merging gateways."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nMultiple sequence flows entering or exiting BPMN elements is called implicit modeling. We generally recommend against using implicit modeling in operational models. Instead, we support the use of explicit modeling, which means, using gateways (in most situations) to govern the process flow.\nThere are various positive aspects for using merging exclusive gateways instead of implicit merges. It affects readability, and also the maintainability of the process model, e.g., deleting and replacing tasks without worrying about sequence flows.\nLet's compare our slightly fixed bad example with a new version with additional corrections.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0s7lmo4",
+            "columns": null
+          },
+          "id": "Field_0pjrc3c",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_2.png?raw=true",
+          "alt": "The image shows the negative example with a few minor corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0s7lmo4",
+            "columns": 8
+          },
+          "id": "Field_14lr3zh",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_3.png?raw=true",
+          "alt": "This image show the slightly fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_0i4bdku",
+        "columns": null
+      },
+      "id": "Field_18wu3pz"
+    },
+    {
+      "text": "Two instances of implicit merging have been corrected: an implicit merge into a task, and an implicit merge into a splitting gateway. Joining and splitting logic should be handled separately.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_00wapy6",
+        "columns": null
+      },
+      "id": "Field_1jla4nc"
+    },
+    {
+      "text": "## Notable Exceptions\nImplicit merging requires additional BPMN elements. In strategic process models, implicit merges can be acceptable.\nOther exceptions are implicit merges directly after start events, implicit merges in event-based gateways that loop on a small scale, and implicit merges into end events.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_11rpiux",
+        "columns": null
+      },
+      "id": "Field_1lk375j"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_0taphdu",
+        "columns": null
+      },
+      "id": "Field_0xxibmv",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/merging_gateways_exceptions.png?raw=true",
+      "alt": "This image shows notable exceptions to the rule."
+    },
+    {
+      "text": "Please proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_03yk8bm",
+        "columns": null
+      },
+      "id": "Field_16yhi5n"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_22q3uj0">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "elements_alignment",
+  "components": [
+    {
+      "text": "# Fixing the Alignment of Elements\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: If applicable, elements are aligned on horizontal axes",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/elements_alignment.png?raw=true",
+          "alt": "The image shows a negative and positive example of properly aligning BPMN elements."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nBPMN elements do not need to be misaligned horizontally for no good reason. Each path of the BPMN model has a distinct meaning. Deviations from that path occur at gateways and boundary events. Give your BPMN model a bit more space and allow the different paths to align horizontally.\nLet's compare our slightly fixed bad example with a new version with additional corrections.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1b7rdow",
+            "columns": 8
+          },
+          "id": "Field_07p7o6h",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_3.png?raw=true",
+          "alt": "The image shows the negative example with a few minor corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1b7rdow",
+            "columns": null
+          },
+          "id": "Field_1isxemd",
+          "alt": "This image show the slightly fixed bad examples with additional minor improvements.",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_4.png?raw=true"
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_1hiu4y5",
+        "columns": null
+      },
+      "id": "Field_1gxmpur"
+    },
+    {
+      "text": "The event-based gateway now takes up more space, but it allows each path to align horizontally.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0id9gye",
+        "columns": null
+      },
+      "id": "Field_13w16wn"
+    },
+    {
+      "text": "## Notable Exceptions\nThere are no notable exceptions to the rule. When following this rule, your BPMN model might become less compact, but there are other ways to reduce the size and complexity of BPMN models.\nPlease proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_045yzsb",
+        "columns": null
+      },
+      "id": "Field_0kmwmu1"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_1fl70q5">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "event_labels",
+  "components": [
+    {
+      "text": "# Fixing Event Labels\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: Event labels are placed below the events",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/event_labels.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to best position event labels"
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nThe readability of BPMN models improves if all models follow the same rules. The reader is then able to focus on the business meaning, and is not distracted by unexpected design choices. Always placing labels below events is an easy fix.\nLet's compare our reasonably fixed bad example with a new version with additional corrections.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_06lod5c",
+            "columns": 8
+          },
+          "id": "Field_1lg5pwc",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_4.png?raw=true",
+          "alt": "The image shows the negative example with a reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_06lod5c",
+            "columns": 8
+          },
+          "id": "Field_07k5m8g",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_5.png?raw=true",
+          "alt": "This image show the reasonably fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_17qsj6n",
+        "columns": null
+      },
+      "id": "Field_0h0vv6b"
+    },
+    {
+      "text": "There are multiple solutions for this problem. In this case, I added another end event with the same business meaning. Another solution would be to introduce a merging exclusive gateway.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0dbsszk",
+        "columns": null
+      },
+      "id": "Field_07knt8v"
+    },
+    {
+      "text": "## Notable Exceptions\nDue to their nature, boundary events are often attached to the bottom of tasks and subprocesses. Naturally, the outgoing sequence flows exit the boundary events to the bottom. Placing the event label become more complex.\nFor boundary events on tasks, I propose to attach it to the bottom and slightly to the left. The label can be placed to the right side. This allows for a compact design. Placing labels right to their respective element is more natural.\nFor boundary events on subprocesses, I follow a similar approach for those attached to the bottom. For boundary events attached to the sides, I like to place the labels on the inside of the subprocess which often makes the subsequence activities after these boundary events less cluttered and easier to follow.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1c7j9fj",
+        "columns": null
+      },
+      "id": "Field_1vezpby"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_1oxr32j",
+        "columns": null
+      },
+      "id": "Field_0fpjehg",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/event_labels_exceptions.png?raw=true",
+      "alt": "This images shows exceptions to the rule."
+    },
+    {
+      "text": "Please proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1cslr3c",
+        "columns": null
+      },
+      "id": "Field_1wf27lk"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2dal7co">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "gateway_labels",
+  "components": [
+    {
+      "text": "# Fixing Gateway Labels\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: Gateway labels are placed above the gateways and sequence flow labels along a horizontal segment",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateway_labels.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to best position gateway and sequence flow labels."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nIn nearly all cases, gateways can be designed to follow a clean pattern. This also allows for proper placement of the gateway and sequence flow labels.\nLet's compare our nearly completely fixed BPMN models.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0xo0dqi",
+            "columns": 8
+          },
+          "id": "Field_0ug04wu",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_5.png?raw=true",
+          "alt": "The image shows the negative example with a reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0xo0dqi",
+            "columns": 8
+          },
+          "id": "Field_0wcsrig",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_6.png?raw=true",
+          "alt": "This image show the reasonably fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_0pms5y3",
+        "columns": null
+      },
+      "id": "Field_1tighxx"
+    },
+    {
+      "text": "Always placing the gateway label above the gateway improves readabililty. Additionally, placing all sequence flow labels properly aligned above one another makes it easier to grasp the splitting logic of the gateway.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1yjka38",
+        "columns": null
+      },
+      "id": "Field_0k9s0ip"
+    },
+    {
+      "text": "## Notable Exceptions\nOnly if a clean gateway pattern is not easy to implement, e.g., it would contradict following an important happy path and would cause chunky design or crossing sequence flows, is an exception to this rule acceptable.\nPlease proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_19x8m6d",
+        "columns": null
+      },
+      "id": "Field_1s6h4x2"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_0ed761m">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "happy_path",
+  "components": [
+    {
+      "text": "# Fixing Readability Problems related to the Happy Path\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: There is a continuous happy path from start to end event in each scope of the BPMN model",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/happy_path.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to model a consistent happy path from start to finish.."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nThere are multiple aspects to the happy path. We covered the first previously, which is a proper horizontal alignment of elements along paths. Another aspect is aligning sequence flows within subprocesses to follow the higher-scope path. Another very important aspect is to order the elements behind the gateway according to business meaning. The horizontally aligned element should be used for the happy path. The other elements can either be sorted by importance or sorted in a specific way because of design reasons.\nLet's compare our nearly fixed BPMN models!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0ipwpmp",
+            "columns": 8
+          },
+          "id": "Field_1vdce8f",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_6.png?raw=true",
+          "alt": "The image shows the negative example with a reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0ipwpmp",
+            "columns": 8
+          },
+          "id": "Field_08qql9s",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_7.png?raw=true",
+          "alt": "This image show the nearly fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_0busu3r",
+        "columns": null
+      },
+      "id": "Field_0ipfmlv"
+    },
+    {
+      "text": "We selected a different element behind the event-based gateway to be our happy path. Additionally, we ensured that the elements in the embedded subprocesses are aligned with the higher-scope path.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0njvg1k",
+        "columns": null
+      },
+      "id": "Field_05p66ej"
+    },
+    {
+      "text": "## Notable Exceptions\nThere are no notable exceptions to this rule. Your BPMN model should, first and foremost, represent your business process. Proper alignment, and more importantly, presenting the happy path is its main goal.\nPlease proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_03kmnr5",
+        "columns": null
+      },
+      "id": "Field_06cpx1f"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2mu8vtp">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "tasks_boundary_events",
+  "components": [
+    {
+      "text": "# Fixing Positioning of Boundary Events on Tasks\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: For tasks, boundary events are attached to the bottom",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/tasks_boundary_events.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to best attach boundary events on tasks"
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nBPMN is modeled from left to right, and in certain scenarios, from top to bottom. This includes gateways and boundary events. Boundary events should be attached to the bottom of tasks. This fits better with the natural direction of reading.\nLet's compare our models. In the last step, we swapped the paths behind the event-based gateway to promote a specific happy path.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0zryfsm",
+            "columns": 8
+          },
+          "id": "Field_140zdbf",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_7.png?raw=true",
+          "alt": "The image shows the negative example with a reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0zryfsm",
+            "columns": 8
+          },
+          "id": "Field_0gpw5i5",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_8.png?raw=true",
+          "alt": "This image show the nearly fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_1ps4osv",
+        "columns": null
+      },
+      "id": "Field_0ysnrnq"
+    },
+    {
+      "text": "With the boundary event attached to the bottom of the task, there are no more elements disturbing the happy path visually. The model did not become significantly less compact.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0st12wt",
+        "columns": null
+      },
+      "id": "Field_102jrof"
+    },
+    {
+      "text": "## Notable Exceptions\nIn more than two boundary events need to be attached to a single task, there are multiple solutions. Either all three events are attached to the bottom, but the labeling becomes difficult. The third boundary event could be attached to the top, or the task is put into an embedded subprocess, with the boundary events being attached to the subprocess.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1iparag",
+        "columns": null
+      },
+      "id": "Field_05yaa9n"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_03wvkiz",
+        "columns": null
+      },
+      "id": "Field_0b9se8o",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/boundary_events_on_tasks_exceptions.png?raw=true",
+      "alt": "This image shows notable exceptions to the rule."
+    },
+    {
+      "text": "Please proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0n8v5z2",
+        "columns": null
+      },
+      "id": "Field_1jsqurb"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2137a9a">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "subprocesses_boundary_events",
+  "components": [
+    {
+      "text": "# Fixing Positioning of Boundary Events on Subprocesses\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: For subprocesses, boundary events are attached to bottom or to the sides below the incoming and outgoing sequence flows",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/subprocesses_boundary_events.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to best attach boundary events to subprocesses."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nWith the recommended direction of modeling being left to right, then top to bottom, the most appropriate position for boundary events on subprocesses are the bottom and the sides, but on the sides below the incoming and outgoing sequence flows.\nThe best position is on the right hand side near the outgoing sequence flow. Here, error or escalation events can be caught an processed. The second best position is on the bottom, if the right side does not provide enough space. In case of a large-scale retry mechanism, the (escalation or error) boundary event can also be attached to the left side, near the incoming sequence flow.\nLet's compare our models!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1s7ifuy",
+            "columns": 8
+          },
+          "id": "Field_1j3nzgv",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_8.png?raw=true",
+          "alt": "The image shows the negative example with reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1s7ifuy",
+            "columns": 8
+          },
+          "id": "Field_0ewcbug",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_9.png?raw=true",
+          "alt": "This image show the nearly fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_043bhfi",
+        "columns": null
+      },
+      "id": "Field_1dfb4jw"
+    },
+    {
+      "text": "The model became a bit more compact, because the space towards the bottom was utilized anyway.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_07w2lni",
+        "columns": null
+      },
+      "id": "Field_1onq76u"
+    },
+    {
+      "text": "## Notable Exceptions\nIt is fair to assume that embedded subprocesses always provide enough space for boundary events. The only issue might be crossing sequence flows. In this case, I suggest introducing link events to simplify the process flow.\nPlease proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_11k6mop",
+        "columns": null
+      },
+      "id": "Field_0zaxh84"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_357cin1">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "sequence_flows_length",
+  "components": [
+    {
+      "text": "# Fixing Overly Long Sequence Flows\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: All sequence flows are of reasonable length and their start and end waypoints can be seen without zooming out",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/sequence_flows_length.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to avoid overly long sequence flows."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nOverly long sequence flows impair the readability of the BPMN model. There are various reasons for overly long sequence flows, and also various solutions. In our example, we are skipping a section of the BPMN model to merge back into the process flow near the end.\nLet's compare our models.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1vq70lx",
+            "columns": 8
+          },
+          "id": "Field_1765sp0",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_9.png?raw=true",
+          "alt": "The image shows the negative example with reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1vq70lx",
+            "columns": 8
+          },
+          "id": "Field_0cnuay0",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_10.png?raw=true",
+          "alt": "This image show the nearly fixed bad examples with additional minor improvements."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_0liqcen",
+        "columns": null
+      },
+      "id": "Field_1jn1ykj"
+    },
+    {
+      "text": "In this case, it is easier to introduce a new end event. Sometimes, it is also worth to duplicate a few activities to avoid overly long sequence flows.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1f0hiwq",
+        "columns": null
+      },
+      "id": "Field_1xbffer"
+    },
+    {
+      "text": "## Additional Examples\nOverly long sequence flows are often used to skip over specific sections of a process model, or to go back to an earlier section of the process. In many scenarios, link events can be used to replace overly long sequence flows. Other solutions involve introducing advanced patterns, like the combination of embedded subprocesses and error or escalation events.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1a8a9iv",
+        "columns": null
+      },
+      "id": "Field_11h5kid"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_15wyil3",
+        "columns": null
+      },
+      "id": "Field_0fyjm1v",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/long_sequence_flows_additional_example_1.png?raw=true",
+      "alt": "This image shows additional examples for this rule."
+    },
+    {
+      "text": "Using different y-coordinates for the pairs of link events helps to support their link visually.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0pybe6h",
+        "columns": null
+      },
+      "id": "Field_1bef43r"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_1vs192r",
+        "columns": null
+      },
+      "id": "Field_0jipmof",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/long_sequence_flows_additional_example_2.png?raw=true",
+      "alt": "This image shows another additional example for this rule."
+    },
+    {
+      "text": "In this case, an embedded subprocess was introduced with additional end events. A similar pattern can be used to handle errors or escalations, even to replace overly long sequence flows going right to left.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0ag2czp",
+        "columns": null
+      },
+      "id": "Field_19rf8gw"
+    },
+    {
+      "text": "## Notable Exceptions\nThe example above do not show very extreme examples. The bad examples, in this case, are acceptable. Once sequence flows become too long to see entirely without zooming out, or they become difficult to follow in general, countermeasures should be taken.\nPlease proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0llics0",
+        "columns": null
+      },
+      "id": "Field_1orgcl1"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_2qks8r7">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "gateways_block_pattern",
+  "components": [
+    {
+      "text": "# Fixing Problems related to  Gateway Block Pattern\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: Gateways follow a block pattern, if possible",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateways_block_pattern.png?raw=true",
+          "alt": "The image shows a negative and positive example of using a block pattern for gateways."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nGateways depict the splitting and joining logic of the process flow. Often, these gateways raise a question for which there are multiple possible answers. And in many of these cases, if the process continues, we can form block patterns to put a close to such questions. This avoids mixing up joining logic of multiple splitting gateways in a single merging gateway.\nThis is true for all types of gateways. It is very important for parallel gateways to avoid deadlocks, though other solutions exist.\nLet's compare our models.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1p2rjxa",
+            "columns": 8
+          },
+          "id": "Field_0mhgb9c",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_10.png?raw=true",
+          "alt": "The image shows the negative example with reasonable corrections."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1p2rjxa",
+            "columns": 8
+          },
+          "id": "Field_1glfyic",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_11.png?raw=true",
+          "alt": "This image shows a completely fixed BPMN model."
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_0c9yy6y",
+        "columns": null
+      },
+      "id": "Field_15v019n"
+    },
+    {
+      "text": "In this step, we introduced the gateway block pattern. The model is now completely green. There are just a few finishing touches left.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0wkchc0",
+        "columns": null
+      },
+      "id": "Field_1bq6xwd"
+    },
+    {
+      "text": "## Notable Exceptions\nUsing the gateway block pattern always introduces additional merging gateways. In certain scenarios, the block pattern does not add a lot of additional insight. An alternative solution is to introduce an embedded subprocess.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_09bxk4g",
+        "columns": null
+      },
+      "id": "Field_0hpa1kv"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_03zp5yh",
+        "columns": null
+      },
+      "id": "Field_1kvt5t3",
+      "alt": "This image shows an alternative solution using an embedded subprocess instead of the gateway block pattern",
+      "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/gateway_block_pattern_exceptions.png?raw=true"
+    },
+    {
+      "text": "Please proceed with the next step once you have adjusted all your BPMN models according to this rule.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0nvt67x",
+        "columns": null
+      },
+      "id": "Field_01gs20n"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_1f9b7h2">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "4cd09b3"
+  },
+  "schemaVersion": 15,
+  "id": "elements_placement",
+  "components": [
+    {
+      "text": "# Fixing Placement of BPMN Elements\nYou left the checkbox related to the following statement and example unchecked.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_13x358l",
+        "columns": null
+      },
+      "id": "Field_1si1mfg"
+    },
+    {
+      "components": [
+        {
+          "text": "**Statement**: All BPMN elements are placed in equal distance to each other",
+          "label": "Text view",
+          "type": "text",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": 6
+          },
+          "id": "Field_05tev7j"
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_0vify34",
+            "columns": null
+          },
+          "id": "Field_0uh3t1w",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/elements_placement.png?raw=true",
+          "alt": "The image shows a negative and positive example of how to best place BPMN elements in relation to each other."
+        }
+      ],
+      "showOutline": true,
+      "label": "",
+      "type": "group",
+      "layout": {
+        "row": "Row_15xgn0a",
+        "columns": null
+      },
+      "id": "Field_0s3oroq"
+    },
+    {
+      "text": "## Reasoning\nIf all elements follow a set of rules regarding their placement, readability of BPMN models improves significantly. This includes the distance between events, tasks, and gateways, placement of boundary events, and the horizontal distance between different paths of the BPMN process.\nFor our example that we fixed over the past steps, I often improved their placements when applying corrections. Thus, there are not many violations left. For this last step, I introduce a few other changes that I find reasonable.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qwlr8s",
+        "columns": null
+      },
+      "id": "Field_1lpwl19"
+    },
+    {
+      "components": [
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1sl88dx",
+            "columns": 8
+          },
+          "id": "Field_1lhn9ns",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_11.png?raw=true",
+          "alt": "This image shows a completely fixed BPMN model."
+        },
+        {
+          "label": "Image view",
+          "type": "image",
+          "layout": {
+            "row": "Row_1sl88dx",
+            "columns": 8
+          },
+          "id": "Field_1rpucfl",
+          "alt": "This images shows a few refactoring steps of the already good example.",
+          "source": "https://github.com/till-stadtler/bpmn-process-blueprints/blob/main/bpmn-self-review/bad_example_step_12.png?raw=true"
+        }
+      ],
+      "showOutline": true,
+      "label": "Model Comparison",
+      "type": "group",
+      "layout": {
+        "row": "Row_1e78qaj",
+        "columns": null
+      },
+      "id": "Field_0dsdcp6"
+    },
+    {
+      "text": "In this last refactoring step, I separated the first two major paths from one another by duplicating a few elements. I replaced the bulky gateway block pattern with a subprocess.It now takes up more space. If it is appropriate, I could extract this embedded subprocess into a separate BPMN file via a call activity.",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0hm82xv",
+        "columns": null
+      },
+      "id": "Field_16atwnb"
+    },
+    {
+      "text": "# The Next Steps\nYou have reached the end of the first part of the BPMN Self-Review! In the next part, we will discuss maintainability, specifically introducing dynamic tasks, call activities, etc., to maximize reusability. Also, we will look at different ways to avoid duplicated BPMN elements, like duplicate error-related catch events, and much more!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1n8u2g3",
+        "columns": null
+      },
+      "id": "Field_1x5mopt"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" name="BPMN Self-Review started">
+      <bpmn:outgoing>Flow_1ey8sn5</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1ey8sn5" sourceRef="StartEvent_1" targetRef="Activity_03s13qs" />
+    <bpmn:userTask id="Activity_03s13qs" name="Present introduction and check readability">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_3o2o85a" />
+        <zeebe:properties>
+          <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#10;  &#34;readability&#34;: {&#10;    &#34;tasks_events_sequence_flows&#34;: false,&#10;    &#34;gateways_sequence_flows&#34;: false,&#10;    &#34;merging_gateways&#34;: false,&#10;    &#34;elements_alignment&#34;: false,&#10;    &#34;event_labels&#34;: false,&#10;    &#34;gateway_labels&#34;: false,&#10;    &#34;happy_path&#34;: false,&#10;    &#34;tasks_boundary_events&#34;: false,&#10;    &#34;subprocesses_boundary_events&#34;: false,&#10;    &#34;sequence_flows_length&#34;: false,&#10;    &#34;elements_placement&#34;: false,&#10;    &#34;gateways_block_pattern&#34;: false&#10;  }&#10;}" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ey8sn5</bpmn:incoming>
+      <bpmn:outgoing>Flow_02pqlzo</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_02pqlzo" sourceRef="Activity_03s13qs" targetRef="Gateway_1v190j0" />
+    <bpmn:exclusiveGateway id="Gateway_1v190j0" name="Tasks Events Sequence Flows?" default="Flow_0i68o41">
+      <bpmn:incoming>Flow_02pqlzo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i68o41</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1f9of1p</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0i68o41" name="no" sourceRef="Gateway_1v190j0" targetRef="Gateway_0ea3jst" />
+    <bpmn:userTask id="Activity_1a1s121" name="Fix problem &#34;Tasks Events Sequence Flows&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_0eqcti0" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1f9of1p</bpmn:incoming>
+      <bpmn:outgoing>Flow_1l6216y</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1f9of1p" name="yes" sourceRef="Gateway_1v190j0" targetRef="Activity_1a1s121">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.tasks_events_sequence_flows)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="Gateway_0ea3jst">
+      <bpmn:incoming>Flow_0i68o41</bpmn:incoming>
+      <bpmn:incoming>Flow_1l6216y</bpmn:incoming>
+      <bpmn:outgoing>Flow_199fcq0</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1l6216y" sourceRef="Activity_1a1s121" targetRef="Gateway_0ea3jst" />
+    <bpmn:exclusiveGateway id="Gateway_00nqw7u" name="Gateways Sequence Flows?" default="Flow_0tizzw1">
+      <bpmn:incoming>Flow_199fcq0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tizzw1</bpmn:outgoing>
+      <bpmn:outgoing>Flow_079ikoe</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_1tlqhpd" name="Fix problem &#34;Gateways Sequence Flows&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2lf94l9" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_079ikoe</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hzhbmt</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1po680o">
+      <bpmn:incoming>Flow_0tizzw1</bpmn:incoming>
+      <bpmn:incoming>Flow_0hzhbmt</bpmn:incoming>
+      <bpmn:outgoing>Flow_030m7s7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0tizzw1" name="no" sourceRef="Gateway_00nqw7u" targetRef="Gateway_1po680o" />
+    <bpmn:sequenceFlow id="Flow_079ikoe" name="yes" sourceRef="Gateway_00nqw7u" targetRef="Activity_1tlqhpd">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.gateways_sequence_flows)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0hzhbmt" sourceRef="Activity_1tlqhpd" targetRef="Gateway_1po680o" />
+    <bpmn:sequenceFlow id="Flow_199fcq0" sourceRef="Gateway_0ea3jst" targetRef="Gateway_00nqw7u" />
+    <bpmn:exclusiveGateway id="Gateway_0ipc4ds" name="Merging gateways?" default="Flow_09pplkq">
+      <bpmn:incoming>Flow_030m7s7</bpmn:incoming>
+      <bpmn:outgoing>Flow_09pplkq</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1vwplbs</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_00zo2bw" name="Fix problem &#34;Merging gateways&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2cnopn5" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1vwplbs</bpmn:incoming>
+      <bpmn:outgoing>Flow_1920jmm</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1krhe1o">
+      <bpmn:incoming>Flow_09pplkq</bpmn:incoming>
+      <bpmn:incoming>Flow_1920jmm</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lhh89d</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_09pplkq" name="no" sourceRef="Gateway_0ipc4ds" targetRef="Gateway_1krhe1o" />
+    <bpmn:sequenceFlow id="Flow_1vwplbs" name="yes" sourceRef="Gateway_0ipc4ds" targetRef="Activity_00zo2bw">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.merging_gateways)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1920jmm" sourceRef="Activity_00zo2bw" targetRef="Gateway_1krhe1o" />
+    <bpmn:sequenceFlow id="Flow_030m7s7" sourceRef="Gateway_1po680o" targetRef="Gateway_0ipc4ds" />
+    <bpmn:exclusiveGateway id="Gateway_0feoh3a" name="Element alignment?" default="Flow_0a1ir30">
+      <bpmn:incoming>Flow_1lhh89d</bpmn:incoming>
+      <bpmn:outgoing>Flow_0a1ir30</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1rqkfdg</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_1t8me10" name="Fix problem &#34;Element alignment&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_22q3uj0" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1rqkfdg</bpmn:incoming>
+      <bpmn:outgoing>Flow_169s1vn</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0108yj7">
+      <bpmn:incoming>Flow_0a1ir30</bpmn:incoming>
+      <bpmn:incoming>Flow_169s1vn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uoxxja</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0a1ir30" name="no" sourceRef="Gateway_0feoh3a" targetRef="Gateway_0108yj7" />
+    <bpmn:sequenceFlow id="Flow_1rqkfdg" name="yes" sourceRef="Gateway_0feoh3a" targetRef="Activity_1t8me10">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.elements_alignment)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_169s1vn" sourceRef="Activity_1t8me10" targetRef="Gateway_0108yj7" />
+    <bpmn:sequenceFlow id="Flow_1lhh89d" sourceRef="Gateway_1krhe1o" targetRef="Gateway_0feoh3a" />
+    <bpmn:exclusiveGateway id="Gateway_18v6i3w" name="Event labels?" default="Flow_14jb6g7">
+      <bpmn:incoming>Flow_1uoxxja</bpmn:incoming>
+      <bpmn:outgoing>Flow_14jb6g7</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0cwf40t</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0msnkdh" name="Fix problem &#34;Event labels&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_1fl70q5" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0cwf40t</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ezh0dj</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_003e0rx">
+      <bpmn:incoming>Flow_14jb6g7</bpmn:incoming>
+      <bpmn:incoming>Flow_1ezh0dj</bpmn:incoming>
+      <bpmn:outgoing>Flow_1w70zhg</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_14jb6g7" name="no" sourceRef="Gateway_18v6i3w" targetRef="Gateway_003e0rx" />
+    <bpmn:sequenceFlow id="Flow_0cwf40t" name="yes" sourceRef="Gateway_18v6i3w" targetRef="Activity_0msnkdh">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.event_labels)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1ezh0dj" sourceRef="Activity_0msnkdh" targetRef="Gateway_003e0rx" />
+    <bpmn:sequenceFlow id="Flow_1uoxxja" sourceRef="Gateway_0108yj7" targetRef="Gateway_18v6i3w" />
+    <bpmn:exclusiveGateway id="Gateway_0umkjyk" name="Gateway labels?" default="Flow_1nym0my">
+      <bpmn:incoming>Flow_1w70zhg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1nym0my</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1kr0y03</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0j1bjos" name="Fix problem &#34;Gateway labels&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2dal7co" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1kr0y03</bpmn:incoming>
+      <bpmn:outgoing>Flow_0whg3aa</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1j1mfw4">
+      <bpmn:incoming>Flow_1nym0my</bpmn:incoming>
+      <bpmn:incoming>Flow_0whg3aa</bpmn:incoming>
+      <bpmn:outgoing>Flow_027nw77</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1nym0my" name="no" sourceRef="Gateway_0umkjyk" targetRef="Gateway_1j1mfw4" />
+    <bpmn:sequenceFlow id="Flow_1kr0y03" name="yes" sourceRef="Gateway_0umkjyk" targetRef="Activity_0j1bjos">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.gateway_labels)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0whg3aa" sourceRef="Activity_0j1bjos" targetRef="Gateway_1j1mfw4" />
+    <bpmn:sequenceFlow id="Flow_1w70zhg" sourceRef="Gateway_003e0rx" targetRef="Gateway_0umkjyk" />
+    <bpmn:exclusiveGateway id="Gateway_0afyxl7" name="Happy path?" default="Flow_0hhp54l">
+      <bpmn:incoming>Flow_027nw77</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hhp54l</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0kssuwo</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_1j9hoa5" name="Fix problem &#34;Happy path&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_0ed761m" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0kssuwo</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qn103n</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0u2tmz3">
+      <bpmn:incoming>Flow_0hhp54l</bpmn:incoming>
+      <bpmn:incoming>Flow_1qn103n</bpmn:incoming>
+      <bpmn:outgoing>Flow_0llt1e6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0hhp54l" name="no" sourceRef="Gateway_0afyxl7" targetRef="Gateway_0u2tmz3" />
+    <bpmn:sequenceFlow id="Flow_0kssuwo" name="yes" sourceRef="Gateway_0afyxl7" targetRef="Activity_1j9hoa5">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.happy_path)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1qn103n" sourceRef="Activity_1j9hoa5" targetRef="Gateway_0u2tmz3" />
+    <bpmn:sequenceFlow id="Flow_027nw77" sourceRef="Gateway_1j1mfw4" targetRef="Gateway_0afyxl7" />
+    <bpmn:exclusiveGateway id="Gateway_16a91yk" name="Boundary events on tasks?" default="Flow_0kag5ew">
+      <bpmn:incoming>Flow_0llt1e6</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kag5ew</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1jqbfo7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0n4jhfk" name="Fix problem &#34;Boundary events on tasks&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2mu8vtp" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1jqbfo7</bpmn:incoming>
+      <bpmn:outgoing>Flow_02ji6yf</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0pozy0e">
+      <bpmn:incoming>Flow_0kag5ew</bpmn:incoming>
+      <bpmn:incoming>Flow_02ji6yf</bpmn:incoming>
+      <bpmn:outgoing>Flow_1j2t62r</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0kag5ew" name="no" sourceRef="Gateway_16a91yk" targetRef="Gateway_0pozy0e" />
+    <bpmn:sequenceFlow id="Flow_1jqbfo7" name="yes" sourceRef="Gateway_16a91yk" targetRef="Activity_0n4jhfk">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.tasks_boundary_events)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_02ji6yf" sourceRef="Activity_0n4jhfk" targetRef="Gateway_0pozy0e" />
+    <bpmn:sequenceFlow id="Flow_0llt1e6" sourceRef="Gateway_0u2tmz3" targetRef="Gateway_16a91yk" />
+    <bpmn:exclusiveGateway id="Gateway_1hh9s33" name="Boundary events on subprocesses?" default="Flow_1x3rrxr">
+      <bpmn:incoming>Flow_1j2t62r</bpmn:incoming>
+      <bpmn:outgoing>Flow_1x3rrxr</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1n3jla8</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_065rh3w" name="Fix problem &#34;Boundary events on subprocesses&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2137a9a" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1n3jla8</bpmn:incoming>
+      <bpmn:outgoing>Flow_02qj4p4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0a64go4">
+      <bpmn:incoming>Flow_1x3rrxr</bpmn:incoming>
+      <bpmn:incoming>Flow_02qj4p4</bpmn:incoming>
+      <bpmn:outgoing>Flow_147q4n5</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1x3rrxr" name="no" sourceRef="Gateway_1hh9s33" targetRef="Gateway_0a64go4" />
+    <bpmn:sequenceFlow id="Flow_1n3jla8" name="yes" sourceRef="Gateway_1hh9s33" targetRef="Activity_065rh3w">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.subprocesses_boundary_events)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_02qj4p4" sourceRef="Activity_065rh3w" targetRef="Gateway_0a64go4" />
+    <bpmn:sequenceFlow id="Flow_1j2t62r" sourceRef="Gateway_0pozy0e" targetRef="Gateway_1hh9s33" />
+    <bpmn:exclusiveGateway id="Gateway_0kgv5sy" name="Sequence flow length?" default="Flow_19osn4u">
+      <bpmn:incoming>Flow_147q4n5</bpmn:incoming>
+      <bpmn:outgoing>Flow_19osn4u</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0tg3ldt</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0wp74ub" name="Fix problem &#34;Sequence flow length&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_357cin1" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0tg3ldt</bpmn:incoming>
+      <bpmn:outgoing>Flow_06hrfo4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_12hdrtw">
+      <bpmn:incoming>Flow_19osn4u</bpmn:incoming>
+      <bpmn:incoming>Flow_06hrfo4</bpmn:incoming>
+      <bpmn:outgoing>Flow_1b5z5vl</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_19osn4u" name="no" sourceRef="Gateway_0kgv5sy" targetRef="Gateway_12hdrtw" />
+    <bpmn:sequenceFlow id="Flow_0tg3ldt" name="yes" sourceRef="Gateway_0kgv5sy" targetRef="Activity_0wp74ub">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.sequence_flows_length)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_06hrfo4" sourceRef="Activity_0wp74ub" targetRef="Gateway_12hdrtw" />
+    <bpmn:sequenceFlow id="Flow_147q4n5" sourceRef="Gateway_0a64go4" targetRef="Gateway_0kgv5sy" />
+    <bpmn:exclusiveGateway id="Gateway_12d7l8h" name="Element placement?" default="Flow_1tnteqk">
+      <bpmn:incoming>Flow_1y7lvic</bpmn:incoming>
+      <bpmn:outgoing>Flow_1tnteqk</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0d13v4u</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0pybjq0" name="Fix problem &#34;Element placement&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_1f9b7h2" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0d13v4u</bpmn:incoming>
+      <bpmn:outgoing>Flow_08n3ybc</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1f6a817">
+      <bpmn:incoming>Flow_1tnteqk</bpmn:incoming>
+      <bpmn:incoming>Flow_08n3ybc</bpmn:incoming>
+      <bpmn:outgoing>Flow_140otka</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1tnteqk" name="no" sourceRef="Gateway_12d7l8h" targetRef="Gateway_1f6a817" />
+    <bpmn:sequenceFlow id="Flow_0d13v4u" name="yes" sourceRef="Gateway_12d7l8h" targetRef="Activity_0pybjq0">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.elements_placement)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_08n3ybc" sourceRef="Activity_0pybjq0" targetRef="Gateway_1f6a817" />
+    <bpmn:exclusiveGateway id="Gateway_1aum5ot" name="Gateway block pattern?" default="Flow_0pf9kg7">
+      <bpmn:incoming>Flow_1b5z5vl</bpmn:incoming>
+      <bpmn:outgoing>Flow_0pf9kg7</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1h4gurh</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0m4rz9x" name="Fix problem &#34;Gateway block pattern&#34;">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2qks8r7" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1h4gurh</bpmn:incoming>
+      <bpmn:outgoing>Flow_1g04c4m</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1itgpgr">
+      <bpmn:incoming>Flow_0pf9kg7</bpmn:incoming>
+      <bpmn:incoming>Flow_1g04c4m</bpmn:incoming>
+      <bpmn:outgoing>Flow_1y7lvic</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0pf9kg7" name="no" sourceRef="Gateway_1aum5ot" targetRef="Gateway_1itgpgr" />
+    <bpmn:sequenceFlow id="Flow_1h4gurh" name="yes" sourceRef="Gateway_1aum5ot" targetRef="Activity_0m4rz9x">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(readability.gateways_block_pattern)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1g04c4m" sourceRef="Activity_0m4rz9x" targetRef="Gateway_1itgpgr" />
+    <bpmn:endEvent id="Event_0zp163j">
+      <bpmn:incoming>Flow_140otka</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1b5z5vl" sourceRef="Gateway_12hdrtw" targetRef="Gateway_1aum5ot" />
+    <bpmn:sequenceFlow id="Flow_1y7lvic" sourceRef="Gateway_1itgpgr" targetRef="Gateway_12d7l8h" />
+    <bpmn:sequenceFlow id="Flow_140otka" sourceRef="Gateway_1f6a817" targetRef="Event_0zp163j" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1puspcw">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="132" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="134" y="175" width="73" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1nzgre6_di" bpmnElement="Activity_03s13qs">
+        <dc:Bounds x="230" y="110" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1v190j0_di" bpmnElement="Gateway_1v190j0" isMarkerVisible="true">
+        <dc:Bounds x="375" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="356" y="87.5" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_070a44o" bpmnElement="Activity_1a1s121">
+        <dc:Bounds x="480" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0ea3jst_di" bpmnElement="Gateway_0ea3jst" isMarkerVisible="true">
+        <dc:Bounds x="605" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1juqz6h" bpmnElement="Gateway_00nqw7u" isMarkerVisible="true">
+        <dc:Bounds x="695" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="676" y="88" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1bkxrnr" bpmnElement="Activity_1tlqhpd">
+        <dc:Bounds x="800" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0aq2elb" bpmnElement="Gateway_1po680o" isMarkerVisible="true">
+        <dc:Bounds x="925" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1mouo8c" bpmnElement="Gateway_0ipc4ds" isMarkerVisible="true">
+        <dc:Bounds x="1015" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1014" y="88" width="53" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_12ufpa0" bpmnElement="Activity_00zo2bw">
+        <dc:Bounds x="1120" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0hcfbk7" bpmnElement="Gateway_1krhe1o" isMarkerVisible="true">
+        <dc:Bounds x="1245" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_10dzejt" bpmnElement="Gateway_0feoh3a" isMarkerVisible="true">
+        <dc:Bounds x="1335" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1334" y="88" width="54" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1j31ze0" bpmnElement="Activity_1t8me10">
+        <dc:Bounds x="1440" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_01a4i07" bpmnElement="Gateway_0108yj7" isMarkerVisible="true">
+        <dc:Bounds x="1565" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1y22bop" bpmnElement="Gateway_18v6i3w" isMarkerVisible="true">
+        <dc:Bounds x="1655" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1646" y="103" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_06ebur4" bpmnElement="Activity_0msnkdh">
+        <dc:Bounds x="1760" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0avq6c1" bpmnElement="Gateway_003e0rx" isMarkerVisible="true">
+        <dc:Bounds x="1885" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0uqcf4m" bpmnElement="Gateway_0umkjyk" isMarkerVisible="true">
+        <dc:Bounds x="1975" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1959" y="103" width="82" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0jls361" bpmnElement="Activity_0j1bjos">
+        <dc:Bounds x="2080" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_04lnzdf" bpmnElement="Gateway_1j1mfw4" isMarkerVisible="true">
+        <dc:Bounds x="2205" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1amqicj" bpmnElement="Gateway_0afyxl7" isMarkerVisible="true">
+        <dc:Bounds x="2295" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2289" y="103" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1tpef3j" bpmnElement="Activity_1j9hoa5">
+        <dc:Bounds x="2400" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_10c4jmh" bpmnElement="Gateway_0u2tmz3" isMarkerVisible="true">
+        <dc:Bounds x="2525" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0th11i1" bpmnElement="Gateway_16a91yk" isMarkerVisible="true">
+        <dc:Bounds x="2615" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2598" y="87" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_10dm6oh" bpmnElement="Activity_0n4jhfk">
+        <dc:Bounds x="2720" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1sl53oi" bpmnElement="Gateway_0pozy0e" isMarkerVisible="true">
+        <dc:Bounds x="2845" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_01gj9eq" bpmnElement="Gateway_1hh9s33" isMarkerVisible="true">
+        <dc:Bounds x="2935" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2915" y="87" width="90" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0t6g09p" bpmnElement="Activity_065rh3w">
+        <dc:Bounds x="3040" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_08du7aj" bpmnElement="Gateway_0a64go4" isMarkerVisible="true">
+        <dc:Bounds x="3165" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0h518bi" bpmnElement="Gateway_0kgv5sy" isMarkerVisible="true">
+        <dc:Bounds x="3255" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3243" y="87" width="74" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0elyti0" bpmnElement="Activity_0wp74ub">
+        <dc:Bounds x="3360" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_04d0n56" bpmnElement="Gateway_12hdrtw" isMarkerVisible="true">
+        <dc:Bounds x="3485" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0vl4hcm" bpmnElement="Gateway_12d7l8h" isMarkerVisible="true">
+        <dc:Bounds x="3895" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3892" y="87" width="57" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1pwucqn" bpmnElement="Activity_0pybjq0">
+        <dc:Bounds x="4000" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_16xu8h6" bpmnElement="Gateway_1f6a817" isMarkerVisible="true">
+        <dc:Bounds x="4125" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1jr6inr" bpmnElement="Gateway_1aum5ot" isMarkerVisible="true">
+        <dc:Bounds x="3575" y="125" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3564" y="87" width="73" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_11b98b9" bpmnElement="Activity_0m4rz9x">
+        <dc:Bounds x="3680" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_06kgnri" bpmnElement="Gateway_1itgpgr" isMarkerVisible="true">
+        <dc:Bounds x="3805" y="125" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0zp163j_di" bpmnElement="Event_0zp163j">
+        <dc:Bounds x="4212" y="132" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1ey8sn5_di" bpmnElement="Flow_1ey8sn5">
+        <di:waypoint x="188" y="150" />
+        <di:waypoint x="230" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02pqlzo_di" bpmnElement="Flow_02pqlzo">
+        <di:waypoint x="330" y="150" />
+        <di:waypoint x="375" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0i68o41_di" bpmnElement="Flow_0i68o41">
+        <di:waypoint x="425" y="150" />
+        <di:waypoint x="605" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="446" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1f9of1p_di" bpmnElement="Flow_1f9of1p">
+        <di:waypoint x="400" y="175" />
+        <di:waypoint x="400" y="260" />
+        <di:waypoint x="480" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="447" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1l6216y_di" bpmnElement="Flow_1l6216y">
+        <di:waypoint x="580" y="260" />
+        <di:waypoint x="630" y="260" />
+        <di:waypoint x="630" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1fnislj" bpmnElement="Flow_0tizzw1">
+        <di:waypoint x="745" y="150" />
+        <di:waypoint x="925" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="766" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1xdnrbv" bpmnElement="Flow_079ikoe">
+        <di:waypoint x="720" y="175" />
+        <di:waypoint x="720" y="260" />
+        <di:waypoint x="800" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="767" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_01v8dwh" bpmnElement="Flow_0hzhbmt">
+        <di:waypoint x="900" y="260" />
+        <di:waypoint x="950" y="260" />
+        <di:waypoint x="950" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_199fcq0_di" bpmnElement="Flow_199fcq0">
+        <di:waypoint x="655" y="150" />
+        <di:waypoint x="695" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0dn5ubf" bpmnElement="Flow_09pplkq">
+        <di:waypoint x="1065" y="150" />
+        <di:waypoint x="1245" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1086" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1vn77cc" bpmnElement="Flow_1vwplbs">
+        <di:waypoint x="1040" y="175" />
+        <di:waypoint x="1040" y="260" />
+        <di:waypoint x="1120" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1087" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0hs4bqf" bpmnElement="Flow_1920jmm">
+        <di:waypoint x="1220" y="260" />
+        <di:waypoint x="1270" y="260" />
+        <di:waypoint x="1270" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_030m7s7_di" bpmnElement="Flow_030m7s7">
+        <di:waypoint x="975" y="150" />
+        <di:waypoint x="1015" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0f1cmri" bpmnElement="Flow_0a1ir30">
+        <di:waypoint x="1385" y="150" />
+        <di:waypoint x="1565" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1406" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_06rq3mv" bpmnElement="Flow_1rqkfdg">
+        <di:waypoint x="1360" y="175" />
+        <di:waypoint x="1360" y="260" />
+        <di:waypoint x="1440" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1407" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1324oy7" bpmnElement="Flow_169s1vn">
+        <di:waypoint x="1540" y="260" />
+        <di:waypoint x="1590" y="260" />
+        <di:waypoint x="1590" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lhh89d_di" bpmnElement="Flow_1lhh89d">
+        <di:waypoint x="1295" y="150" />
+        <di:waypoint x="1335" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1n0t0ok" bpmnElement="Flow_14jb6g7">
+        <di:waypoint x="1705" y="150" />
+        <di:waypoint x="1885" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1726" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_180cz9s" bpmnElement="Flow_0cwf40t">
+        <di:waypoint x="1680" y="175" />
+        <di:waypoint x="1680" y="260" />
+        <di:waypoint x="1760" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1727" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0dqu0mm" bpmnElement="Flow_1ezh0dj">
+        <di:waypoint x="1860" y="260" />
+        <di:waypoint x="1910" y="260" />
+        <di:waypoint x="1910" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uoxxja_di" bpmnElement="Flow_1uoxxja">
+        <di:waypoint x="1615" y="150" />
+        <di:waypoint x="1655" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1w8uw68" bpmnElement="Flow_1nym0my">
+        <di:waypoint x="2025" y="150" />
+        <di:waypoint x="2205" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2046" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1o10zvl" bpmnElement="Flow_1kr0y03">
+        <di:waypoint x="2000" y="175" />
+        <di:waypoint x="2000" y="260" />
+        <di:waypoint x="2080" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2047" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_11wzeke" bpmnElement="Flow_0whg3aa">
+        <di:waypoint x="2180" y="260" />
+        <di:waypoint x="2230" y="260" />
+        <di:waypoint x="2230" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1w70zhg_di" bpmnElement="Flow_1w70zhg">
+        <di:waypoint x="1935" y="150" />
+        <di:waypoint x="1975" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_06l8inq" bpmnElement="Flow_0hhp54l">
+        <di:waypoint x="2345" y="150" />
+        <di:waypoint x="2525" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2366" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1kbngi0" bpmnElement="Flow_0kssuwo">
+        <di:waypoint x="2320" y="175" />
+        <di:waypoint x="2320" y="260" />
+        <di:waypoint x="2400" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2367" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1lrsk90" bpmnElement="Flow_1qn103n">
+        <di:waypoint x="2500" y="260" />
+        <di:waypoint x="2550" y="260" />
+        <di:waypoint x="2550" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_027nw77_di" bpmnElement="Flow_027nw77">
+        <di:waypoint x="2255" y="150" />
+        <di:waypoint x="2295" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1svtfa2" bpmnElement="Flow_0kag5ew">
+        <di:waypoint x="2665" y="150" />
+        <di:waypoint x="2845" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2686" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_09ep6zd" bpmnElement="Flow_1jqbfo7">
+        <di:waypoint x="2640" y="175" />
+        <di:waypoint x="2640" y="260" />
+        <di:waypoint x="2720" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2687" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0gtob1b" bpmnElement="Flow_02ji6yf">
+        <di:waypoint x="2820" y="260" />
+        <di:waypoint x="2870" y="260" />
+        <di:waypoint x="2870" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0llt1e6_di" bpmnElement="Flow_0llt1e6">
+        <di:waypoint x="2575" y="150" />
+        <di:waypoint x="2615" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1ox9se4" bpmnElement="Flow_1x3rrxr">
+        <di:waypoint x="2985" y="150" />
+        <di:waypoint x="3165" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3006" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0idvgll" bpmnElement="Flow_1n3jla8">
+        <di:waypoint x="2960" y="175" />
+        <di:waypoint x="2960" y="260" />
+        <di:waypoint x="3040" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3007" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1vzppnf" bpmnElement="Flow_02qj4p4">
+        <di:waypoint x="3140" y="260" />
+        <di:waypoint x="3190" y="260" />
+        <di:waypoint x="3190" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1j2t62r_di" bpmnElement="Flow_1j2t62r">
+        <di:waypoint x="2895" y="150" />
+        <di:waypoint x="2935" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_12c376a" bpmnElement="Flow_19osn4u">
+        <di:waypoint x="3305" y="150" />
+        <di:waypoint x="3485" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3326" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1de0zcn" bpmnElement="Flow_0tg3ldt">
+        <di:waypoint x="3280" y="175" />
+        <di:waypoint x="3280" y="260" />
+        <di:waypoint x="3360" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3327" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1vt3g7b" bpmnElement="Flow_06hrfo4">
+        <di:waypoint x="3460" y="260" />
+        <di:waypoint x="3510" y="260" />
+        <di:waypoint x="3510" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_147q4n5_di" bpmnElement="Flow_147q4n5">
+        <di:waypoint x="3215" y="150" />
+        <di:waypoint x="3255" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1dr9asw" bpmnElement="Flow_1tnteqk">
+        <di:waypoint x="3945" y="150" />
+        <di:waypoint x="4125" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3966" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1yave52" bpmnElement="Flow_0d13v4u">
+        <di:waypoint x="3920" y="175" />
+        <di:waypoint x="3920" y="260" />
+        <di:waypoint x="4000" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3967" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0ybhfn5" bpmnElement="Flow_08n3ybc">
+        <di:waypoint x="4100" y="260" />
+        <di:waypoint x="4150" y="260" />
+        <di:waypoint x="4150" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1w6kfil" bpmnElement="Flow_0pf9kg7">
+        <di:waypoint x="3625" y="150" />
+        <di:waypoint x="3805" y="150" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3646" y="132" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0j3951i" bpmnElement="Flow_1h4gurh">
+        <di:waypoint x="3600" y="175" />
+        <di:waypoint x="3600" y="260" />
+        <di:waypoint x="3680" y="260" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3647" y="243" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1gr1cjw" bpmnElement="Flow_1g04c4m">
+        <di:waypoint x="3780" y="260" />
+        <di:waypoint x="3830" y="260" />
+        <di:waypoint x="3830" y="175" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1b5z5vl_di" bpmnElement="Flow_1b5z5vl">
+        <di:waypoint x="3535" y="150" />
+        <di:waypoint x="3575" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1y7lvic_di" bpmnElement="Flow_1y7lvic">
+        <di:waypoint x="3855" y="150" />
+        <di:waypoint x="3895" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_140otka_di" bpmnElement="Flow_140otka">
+        <di:waypoint x="4175" y="150" />
+        <di:waypoint x="4212" y="150" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

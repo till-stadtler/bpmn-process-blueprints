@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1x6m4ws" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.21.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <bpmn:process id="Process_1udbrbz" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="UserTaskForm_3577cio">{
+  "components": [
+    {
+      "text": "# Form Template",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1434i37",
+        "columns": null
+      },
+      "id": "Field_0iviqd2"
+    },
+    {
+      "values": [
+        {
+          "label": "accepted",
+          "value": "accepted"
+        },
+        {
+          "label": "fully accepted",
+          "value": "fully_accepted"
+        },
+        {
+          "label": "canceled",
+          "value": "canceled"
+        },
+        {
+          "label": "to be restarted",
+          "value": "to_be_restarted"
+        }
+      ],
+      "label": "Radio group",
+      "type": "radio",
+      "layout": {
+        "row": "Row_1w6jnfu",
+        "columns": null
+      },
+      "id": "Field_0y92l2j",
+      "key": "outcome"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0v1m6kz",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "schemaVersion": 15
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_20231nl">{
+  "components": [
+    {
+      "text": "# Form Template",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1434i37",
+        "columns": null
+      },
+      "id": "Field_0iviqd2"
+    },
+    {
+      "values": [
+        {
+          "label": "accepted",
+          "value": "accepted"
+        },
+        {
+          "label": "fully accepted",
+          "value": "fully_accepted"
+        },
+        {
+          "label": "canceled",
+          "value": "canceled"
+        },
+        {
+          "label": "to be restarted",
+          "value": "to_be_restarted"
+        }
+      ],
+      "label": "Radio group",
+      "type": "radio",
+      "layout": {
+        "row": "Row_1w6jnfu",
+        "columns": null
+      },
+      "id": "Field_0y92l2j",
+      "key": "outcome"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0v1m6kz",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "schemaVersion": 15
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_0fsv76u">{
+  "components": [
+    {
+      "text": "# Form Template",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1434i37",
+        "columns": null
+      },
+      "id": "Field_0iviqd2"
+    },
+    {
+      "values": [
+        {
+          "label": "accepted",
+          "value": "accepted"
+        },
+        {
+          "label": "fully accepted",
+          "value": "fully_accepted"
+        },
+        {
+          "label": "canceled",
+          "value": "canceled"
+        },
+        {
+          "label": "to be restarted",
+          "value": "to_be_restarted"
+        }
+      ],
+      "label": "Radio group",
+      "type": "radio",
+      "layout": {
+        "row": "Row_1w6jnfu",
+        "columns": null
+      },
+      "id": "Field_0y92l2j",
+      "key": "outcome"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0v1m6kz",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.4.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.21.0"
+  },
+  "schemaVersion": 15
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" name="multi-step review requested">
+      <bpmn:outgoing>Flow_18jdxd2</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:subProcess id="Activity_1atfm9k">
+      <bpmn:incoming>Flow_18ckmxp</bpmn:incoming>
+      <bpmn:outgoing>Flow_1pvbvo2</bpmn:outgoing>
+      <bpmn:startEvent id="Event_0vntnb3" name="review started">
+        <bpmn:outgoing>Flow_18t3el8</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:sequenceFlow id="Flow_18t3el8" sourceRef="Event_0vntnb3" targetRef="Activity_1uu8uya" />
+      <bpmn:exclusiveGateway id="Gateway_1e6l852" name="Review outcome?">
+        <bpmn:incoming>Flow_1q0c91p</bpmn:incoming>
+        <bpmn:outgoing>Flow_0oqosia</bpmn:outgoing>
+        <bpmn:outgoing>Flow_171b0y1</bpmn:outgoing>
+        <bpmn:outgoing>Flow_18q30cg</bpmn:outgoing>
+        <bpmn:outgoing>Flow_18obm3q</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_0oqosia" name="accepted" sourceRef="Gateway_1e6l852" targetRef="Activity_1rxpjza">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=outcome = "accepted"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:exclusiveGateway id="Gateway_1m76wfs" name="Review outcome?" default="Flow_19pchgh">
+        <bpmn:incoming>Flow_0hlpx9m</bpmn:incoming>
+        <bpmn:outgoing>Flow_0wu2a5a</bpmn:outgoing>
+        <bpmn:outgoing>Flow_19pchgh</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_0hlpx9m" sourceRef="Activity_1rxpjza" targetRef="Gateway_1m76wfs" />
+      <bpmn:sequenceFlow id="Flow_0wu2a5a" name="accepted" sourceRef="Gateway_1m76wfs" targetRef="Activity_093glnf">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=count(outcomes) &gt;= 5 and count(outcomes.outcome[item="accepted"])/count(outcomes)&gt;=0.66</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:userTask id="Activity_1rxpjza" name="Second review step">
+        <bpmn:extensionElements>
+          <zeebe:properties>
+            <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#10;  &#34;outcome&#34;: &#34;accepted&#34;&#10;}" />
+          </zeebe:properties>
+          <zeebe:assignmentDefinition assignee="reviewer" />
+          <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_20231nl" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0oqosia</bpmn:incoming>
+        <bpmn:outgoing>Flow_0hlpx9m</bpmn:outgoing>
+        <bpmn:multiInstanceLoopCharacteristics isSequential="true">
+          <bpmn:extensionElements>
+            <zeebe:loopCharacteristics inputCollection="=listOfReviewers" inputElement="reviewer" outputCollection="outcomes" outputElement="={&#10;  &#34;outcome&#34;: outcome&#10;}" />
+          </bpmn:extensionElements>
+          <bpmn:completionCondition xsi:type="bpmn:tFormalExpression">=count(outcomes) &gt;= 5 and count(outcomes.outcome[item="accepted"])/count(outcomes)&gt;=0.66</bpmn:completionCondition>
+        </bpmn:multiInstanceLoopCharacteristics>
+      </bpmn:userTask>
+      <bpmn:userTask id="Activity_093glnf" name="Third review step">
+        <bpmn:extensionElements>
+          <zeebe:properties>
+            <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#10;  &#34;outcome&#34;: &#34;accepted&#34;&#10;}" />
+          </zeebe:properties>
+          <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_0fsv76u" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0wu2a5a</bpmn:incoming>
+        <bpmn:outgoing>Flow_1uzzkf9</bpmn:outgoing>
+      </bpmn:userTask>
+      <bpmn:endEvent id="Event_1qxdvo5" name="accepted">
+        <bpmn:incoming>Flow_0gyar1w</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_1uzzkf9" sourceRef="Activity_093glnf" targetRef="Gateway_144jntj" />
+      <bpmn:sequenceFlow id="Flow_171b0y1" name="canceled" sourceRef="Gateway_1e6l852" targetRef="Event_1ksalit">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=list contains(outcomes.outcome, "canceled")</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="Flow_18q30cg" name="to be restarted" sourceRef="Gateway_1e6l852" targetRef="Event_10w2uqm">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=contains(outcomes.outcome, "to_be_restarted")</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="Flow_19pchgh" name="canceled" sourceRef="Gateway_1m76wfs" targetRef="Event_1om98tw" />
+      <bpmn:exclusiveGateway id="Gateway_144jntj" name="Review outcome?">
+        <bpmn:incoming>Flow_1uzzkf9</bpmn:incoming>
+        <bpmn:outgoing>Flow_0gyar1w</bpmn:outgoing>
+        <bpmn:outgoing>Flow_176yii8</bpmn:outgoing>
+        <bpmn:outgoing>Flow_0f7ok1p</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_0gyar1w" name="accepted" sourceRef="Gateway_144jntj" targetRef="Event_1qxdvo5">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=outcome = "accepted" or outcome = "fully_accepted"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="Flow_176yii8" name="canceled" sourceRef="Gateway_144jntj" targetRef="Event_0x96lve">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=outcome = "canceled"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="Flow_0f7ok1p" name="to be restarted" sourceRef="Gateway_144jntj" targetRef="Event_1urse1x">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=outcome = "to_be_restarted"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:endEvent id="Event_1ksalit" name="canceled">
+        <bpmn:incoming>Flow_171b0y1</bpmn:incoming>
+        <bpmn:errorEventDefinition id="ErrorEventDefinition_0foqpsv" errorRef="Error_1c415mo" />
+      </bpmn:endEvent>
+      <bpmn:endEvent id="Event_1om98tw" name="canceled">
+        <bpmn:incoming>Flow_19pchgh</bpmn:incoming>
+        <bpmn:errorEventDefinition id="ErrorEventDefinition_1j2wwu0" errorRef="Error_1c415mo" />
+      </bpmn:endEvent>
+      <bpmn:endEvent id="Event_0x96lve" name="canceled">
+        <bpmn:incoming>Flow_176yii8</bpmn:incoming>
+        <bpmn:errorEventDefinition id="ErrorEventDefinition_0qgcdnx" errorRef="Error_1c415mo" />
+      </bpmn:endEvent>
+      <bpmn:endEvent id="Event_10w2uqm" name="to be restarted">
+        <bpmn:incoming>Flow_18q30cg</bpmn:incoming>
+        <bpmn:escalationEventDefinition id="EscalationEventDefinition_1dkicft" escalationRef="Escalation_1lte3ae" />
+      </bpmn:endEvent>
+      <bpmn:endEvent id="Event_1urse1x" name="to be restarted">
+        <bpmn:incoming>Flow_0f7ok1p</bpmn:incoming>
+        <bpmn:escalationEventDefinition id="EscalationEventDefinition_1fejgeo" escalationRef="Escalation_1lte3ae" />
+      </bpmn:endEvent>
+      <bpmn:endEvent id="Event_07a84mm" name="fully accepted">
+        <bpmn:incoming>Flow_18obm3q</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_18obm3q" name="fully accepted" sourceRef="Gateway_1e6l852" targetRef="Event_07a84mm">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=list contains(outcomes.outcome, "fully_accepted")</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:userTask id="Activity_1uu8uya" name="Perform review">
+        <bpmn:extensionElements>
+          <zeebe:assignmentDefinition assignee="=reviewer" />
+          <zeebe:properties>
+            <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#10;  &#34;outcome&#34;: &#34;approved&#34;&#10;}" />
+          </zeebe:properties>
+          <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_3577cio" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_18t3el8</bpmn:incoming>
+        <bpmn:outgoing>Flow_1q0c91p</bpmn:outgoing>
+        <bpmn:multiInstanceLoopCharacteristics>
+          <bpmn:extensionElements>
+            <zeebe:loopCharacteristics inputCollection="=listOfReviewers" inputElement="reviewer" outputCollection="outcomes" outputElement="={&#10;  &#34;outcome&#34;: outcome&#10;}" />
+          </bpmn:extensionElements>
+          <bpmn:completionCondition xsi:type="bpmn:tFormalExpression">=list contains(outcomes.outcome, "fully_accepted") or list contains(outcomes.outcome, "to_be_restarted") or list contains(outcomes.outcome, "canceled")</bpmn:completionCondition>
+        </bpmn:multiInstanceLoopCharacteristics>
+      </bpmn:userTask>
+      <bpmn:sequenceFlow id="Flow_1q0c91p" sourceRef="Activity_1uu8uya" targetRef="Gateway_1e6l852" />
+      <bpmn:boundaryEvent id="Event_1vgglh5" name="2 days" attachedToRef="Activity_093glnf">
+        <bpmn:outgoing>Flow_1j7uwtp</bpmn:outgoing>
+        <bpmn:timerEventDefinition id="TimerEventDefinition_1wi14iq">
+          <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">P2D</bpmn:timeDuration>
+        </bpmn:timerEventDefinition>
+      </bpmn:boundaryEvent>
+      <bpmn:sequenceFlow id="Flow_1j7uwtp" sourceRef="Event_1vgglh5" targetRef="Event_040gity" />
+      <bpmn:endEvent id="Event_040gity" name="to be restarted">
+        <bpmn:incoming>Flow_1j7uwtp</bpmn:incoming>
+        <bpmn:errorEventDefinition id="ErrorEventDefinition_16hj8ca" errorRef="Error_1c415mo" />
+      </bpmn:endEvent>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_18jdxd2" sourceRef="StartEvent_1" targetRef="Gateway_1lfghp4" />
+    <bpmn:sequenceFlow id="Flow_1pvbvo2" sourceRef="Activity_1atfm9k" targetRef="Activity_0paiscq" />
+    <bpmn:exclusiveGateway id="Gateway_1lfghp4">
+      <bpmn:incoming>Flow_18jdxd2</bpmn:incoming>
+      <bpmn:incoming>Flow_1rd584a</bpmn:incoming>
+      <bpmn:outgoing>Flow_1f8v6b4</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1f8v6b4" sourceRef="Gateway_1lfghp4" targetRef="Activity_1pjn0ln" />
+    <bpmn:sequenceFlow id="Flow_1rd584a" sourceRef="Event_0ek49jm" targetRef="Gateway_1lfghp4" />
+    <bpmn:sequenceFlow id="Flow_0ryopio" sourceRef="Event_1ske6nl" targetRef="Activity_0k50o7h" />
+    <bpmn:endEvent id="Event_0dit8m8" name="multi-step review accepted">
+      <bpmn:incoming>Flow_0wmu4rh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0wmu4rh" sourceRef="Activity_0paiscq" targetRef="Event_0dit8m8" />
+    <bpmn:sequenceFlow id="Flow_0usgdb7" sourceRef="Activity_0k50o7h" targetRef="Event_01llxtn" />
+    <bpmn:boundaryEvent id="Event_1ske6nl" name="canceled" attachedToRef="Activity_1atfm9k">
+      <bpmn:outgoing>Flow_0ryopio</bpmn:outgoing>
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_0yd9nto" errorRef="Error_1c415mo" />
+    </bpmn:boundaryEvent>
+    <bpmn:serviceTask id="Activity_0k50o7h" name="React to cancelation">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="react_to_cancelation" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ryopio</bpmn:incoming>
+      <bpmn:outgoing>Flow_0usgdb7</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_0paiscq" name="React to acceptance">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="react_to_acceptance" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1pvbvo2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wmu4rh</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_18ckmxp" sourceRef="Activity_1pjn0ln" targetRef="Activity_1atfm9k" />
+    <bpmn:serviceTask id="Activity_1pjn0ln" name="Prepare review data">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="prepare_review_data" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1f8v6b4</bpmn:incoming>
+      <bpmn:outgoing>Flow_18ckmxp</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:boundaryEvent id="Event_0ek49jm" name="to be restarted" attachedToRef="Activity_1atfm9k">
+      <bpmn:outgoing>Flow_1rd584a</bpmn:outgoing>
+      <bpmn:escalationEventDefinition id="EscalationEventDefinition_0qse9gr" escalationRef="Escalation_1lte3ae" />
+    </bpmn:boundaryEvent>
+    <bpmn:endEvent id="Event_01llxtn" name="multi-step review canceled">
+      <bpmn:incoming>Flow_0usgdb7</bpmn:incoming>
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_1dg5rml" errorRef="Error_1c415mo" />
+    </bpmn:endEvent>
+    <bpmn:textAnnotation id="TextAnnotation_1ph11bf">
+      <bpmn:text>All reviewers can start working on their form in parallel. The user task is completed if a reviewer fully accepts, cancels or requests a restart. Or, if all reviewers simply accept the review.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1xom2db">
+      <bpmn:text>The reviewers will work on this task one at a time. The user task is completed when at least 5 reviews were approved, with at least 66% approval rating. Else, it is canceled.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_03og8cq">
+      <bpmn:text>Only a single form needs to be completed. But if this does not happen within 2 days, the review is canceled.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0lpy9we" associationDirection="None" sourceRef="Activity_1uu8uya" targetRef="TextAnnotation_1ph11bf" />
+    <bpmn:association id="Association_0fh237c" associationDirection="None" sourceRef="Activity_1rxpjza" targetRef="TextAnnotation_1xom2db" />
+    <bpmn:association id="Association_1j2dgin" associationDirection="None" sourceRef="Activity_093glnf" targetRef="TextAnnotation_03og8cq" />
+  </bpmn:process>
+  <bpmn:error id="Error_1c415mo" name="Review canceled" errorCode="review_canceled" />
+  <bpmn:escalation id="Escalation_1lte3ae" name="Review to be restarted" escalationCode="review_to_be_restarted" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1udbrbz">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="295" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0dit8m8_di" bpmnElement="Event_0dit8m8">
+        <dc:Bounds x="1842" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1818" y="295" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ymmsa9_di" bpmnElement="Activity_0k50o7h">
+        <dc:Bounds x="1700" y="470" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xnaq1a_di" bpmnElement="Activity_0paiscq">
+        <dc:Bounds x="1700" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_07vqgdh_di" bpmnElement="Event_01llxtn">
+        <dc:Bounds x="1842" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1818" y="535" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1lfghp4_di" bpmnElement="Gateway_1lfghp4" isMarkerVisible="true">
+        <dc:Bounds x="255" y="245" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18cblzj_di" bpmnElement="Activity_1pjn0ln">
+        <dc:Bounds x="340" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1atfm9k_di" bpmnElement="Activity_1atfm9k" isExpanded="true">
+        <dc:Bounds x="480" y="180" width="1160" height="540" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0vntnb3_di" bpmnElement="Event_0vntnb3">
+        <dc:Bounds x="520" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="504" y="295" width="69" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1e6l852_di" bpmnElement="Gateway_1e6l852" isMarkerVisible="true">
+        <dc:Bounds x="745" y="245" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="726" y="223" width="88" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1m76wfs_di" bpmnElement="Gateway_1m76wfs" isMarkerVisible="true">
+        <dc:Bounds x="1015" y="245" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="996" y="223" width="88" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xe3i6r_di" bpmnElement="Activity_1rxpjza">
+        <dc:Bounds x="870" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1v172xn_di" bpmnElement="Event_1ksalit">
+        <dc:Bounds x="872" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="868" y="535" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1h9k97f_di" bpmnElement="Event_10w2uqm">
+        <dc:Bounds x="872" y="612" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="855" y="655" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_07a84mm_di" bpmnElement="Event_07a84mm">
+        <dc:Bounds x="872" y="372" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="857" y="415" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pthi8u_di" bpmnElement="Activity_1uu8uya">
+        <dc:Bounds x="600" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1v2anha_di" bpmnElement="Activity_093glnf">
+        <dc:Bounds x="1210" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1sx3zcu_di" bpmnElement="Event_1om98tw">
+        <dc:Bounds x="1142" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1138" y="535" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1qxdvo5_di" bpmnElement="Event_1qxdvo5">
+        <dc:Bounds x="1542" y="252" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1538" y="295" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_144jntj_di" bpmnElement="Gateway_144jntj" isMarkerVisible="true">
+        <dc:Bounds x="1415" y="245" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1396" y="223" width="88" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0qetzpb_di" bpmnElement="Event_0x96lve">
+        <dc:Bounds x="1542" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1538" y="535" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1k08378_di" bpmnElement="Event_1urse1x">
+        <dc:Bounds x="1542" y="612" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1525" y="655" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1abww5w_di" bpmnElement="Event_040gity">
+        <dc:Bounds x="1342" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1325" y="535" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vccpiq_di" bpmnElement="Event_1vgglh5">
+        <dc:Bounds x="1222" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1253" y="323" width="33" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_18t3el8_di" bpmnElement="Flow_18t3el8">
+        <di:waypoint x="556" y="270" />
+        <di:waypoint x="600" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1q0c91p_di" bpmnElement="Flow_1q0c91p">
+        <di:waypoint x="700" y="270" />
+        <di:waypoint x="745" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0oqosia_di" bpmnElement="Flow_0oqosia">
+        <di:waypoint x="795" y="270" />
+        <di:waypoint x="870" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="797" y="252" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_171b0y1_di" bpmnElement="Flow_171b0y1">
+        <di:waypoint x="770" y="295" />
+        <di:waypoint x="770" y="510" />
+        <di:waypoint x="872" y="510" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="797" y="493" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18q30cg_di" bpmnElement="Flow_18q30cg">
+        <di:waypoint x="770" y="295" />
+        <di:waypoint x="770" y="630" />
+        <di:waypoint x="872" y="630" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="785" y="613" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18obm3q_di" bpmnElement="Flow_18obm3q">
+        <di:waypoint x="770" y="295" />
+        <di:waypoint x="770" y="390" />
+        <di:waypoint x="872" y="390" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="786" y="373" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hlpx9m_di" bpmnElement="Flow_0hlpx9m">
+        <di:waypoint x="970" y="270" />
+        <di:waypoint x="1015" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wu2a5a_di" bpmnElement="Flow_0wu2a5a">
+        <di:waypoint x="1065" y="270" />
+        <di:waypoint x="1210" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1067" y="252" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19pchgh_di" bpmnElement="Flow_19pchgh">
+        <di:waypoint x="1040" y="295" />
+        <di:waypoint x="1040" y="510" />
+        <di:waypoint x="1142" y="510" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1067" y="493" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uzzkf9_di" bpmnElement="Flow_1uzzkf9">
+        <di:waypoint x="1310" y="270" />
+        <di:waypoint x="1415" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0gyar1w_di" bpmnElement="Flow_0gyar1w">
+        <di:waypoint x="1465" y="270" />
+        <di:waypoint x="1542" y="270" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1467" y="252" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_176yii8_di" bpmnElement="Flow_176yii8">
+        <di:waypoint x="1440" y="295" />
+        <di:waypoint x="1440" y="510" />
+        <di:waypoint x="1542" y="510" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1467" y="493" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0f7ok1p_di" bpmnElement="Flow_0f7ok1p">
+        <di:waypoint x="1440" y="295" />
+        <di:waypoint x="1440" y="630" />
+        <di:waypoint x="1542" y="630" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1455" y="613" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1j7uwtp_di" bpmnElement="Flow_1j7uwtp">
+        <di:waypoint x="1240" y="328" />
+        <di:waypoint x="1240" y="510" />
+        <di:waypoint x="1342" y="510" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0fh237c_di" bpmnElement="Association_0fh237c">
+        <di:waypoint x="918" y="230" />
+        <di:waypoint x="913" y="152" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0lpy9we_di" bpmnElement="Association_0lpy9we">
+        <di:waypoint x="629" y="230" />
+        <di:waypoint x="588" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1j2dgin_di" bpmnElement="Association_1j2dgin">
+        <di:waypoint x="1260" y="230" />
+        <di:waypoint x="1260" y="147" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_167usw3_di" bpmnElement="Event_0ek49jm">
+        <dc:Bounds x="462" y="612" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="395" y="655" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0okio1k_di" bpmnElement="Event_1ske6nl">
+        <dc:Bounds x="1622" y="492" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1647" y="535" width="45" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1ph11bf_di" bpmnElement="TextAnnotation_1ph11bf">
+        <dc:Bounds x="510" y="80" width="280.01596980255516" height="69.68641114982579" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1xom2db_di" bpmnElement="TextAnnotation_1xom2db">
+        <dc:Bounds x="860" y="82" width="248.65708478513358" height="69.68641114982579" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_03og8cq_di" bpmnElement="TextAnnotation_03og8cq">
+        <dc:Bounds x="1210" y="82" width="180.1321138211382" height="65.04065040650407" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_18jdxd2_di" bpmnElement="Flow_18jdxd2">
+        <di:waypoint x="218" y="270" />
+        <di:waypoint x="255" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wmu4rh_di" bpmnElement="Flow_0wmu4rh">
+        <di:waypoint x="1800" y="270" />
+        <di:waypoint x="1842" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ryopio_di" bpmnElement="Flow_0ryopio">
+        <di:waypoint x="1658" y="510" />
+        <di:waypoint x="1700" y="510" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0usgdb7_di" bpmnElement="Flow_0usgdb7">
+        <di:waypoint x="1800" y="510" />
+        <di:waypoint x="1842" y="510" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1pvbvo2_di" bpmnElement="Flow_1pvbvo2">
+        <di:waypoint x="1640" y="270" />
+        <di:waypoint x="1700" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18ckmxp_di" bpmnElement="Flow_18ckmxp">
+        <di:waypoint x="440" y="270" />
+        <di:waypoint x="480" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rd584a_di" bpmnElement="Flow_1rd584a">
+        <di:waypoint x="462" y="630" />
+        <di:waypoint x="280" y="630" />
+        <di:waypoint x="280" y="295" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1f8v6b4_di" bpmnElement="Flow_1f8v6b4">
+        <di:waypoint x="305" y="270" />
+        <di:waypoint x="340" y="270" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
